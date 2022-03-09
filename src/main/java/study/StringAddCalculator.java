@@ -1,10 +1,19 @@
 package study;
 
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class StringAddCalculator {
+
+    public static void main(String[] args) throws IOException {
+
+        String inputString = InputView.inputString();
+        ResultView.resultMessage(StringAddCalculator.splitAndSum(inputString));
+
+    }
+
     public static int splitAndSum(String text) {
 
         if (isValidationCheckNullOrEmpty(text)) {
