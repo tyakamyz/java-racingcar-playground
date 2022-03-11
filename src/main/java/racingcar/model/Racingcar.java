@@ -10,6 +10,7 @@ public class Racingcar {
     static final int NAME_SIZE = 5;
 
     private final String name;
+    private int move = 0;
 
     public Racingcar(String name) {
         this.name = name;
@@ -48,5 +49,9 @@ public class Racingcar {
             throw new IllegalArgumentException();
         }
 
+    }
+
+    public void addMove(){
+        this.move++;
     }
 }
