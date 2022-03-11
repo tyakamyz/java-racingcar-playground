@@ -12,6 +12,14 @@ public class Racingcar {
     private final String name;
     private int move = 0;
 
+    public String getName() {
+        return this.name;
+    }
+
+    public int getMove() {
+        return this.move;
+    }
+
     public Racingcar(String name) {
         this.name = name;
     }
