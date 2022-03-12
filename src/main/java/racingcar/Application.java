@@ -1,23 +1,24 @@
 package racingcar;
 
-import racingcar.model.Racingcar;
+import racingcar.domain.Cars;
+import racingcar.domain.RacingGame;
 
 import java.io.IOException;
-import java.util.List;
 
 public class Application {
     public static void main(String[] args) throws IOException {
 
-        List<Racingcar> racingcars = Racingcar.inputStringToRacingcars(InputView.inputString());
+        Cars cars = new Cars(InputView.inputString());
+
         int round = InputView.inputRound();
         RacingGame racingGame = new RacingGame();
 
         ResultView.startMessage();
         for (int i = 0; i < round; i++) {
-            System.out.println(racingGame.raceProgressReturnScore(racingcars));
+            System.out.println(racingGame.raceProgressReturnScore(cars));
         }
 
-        ResultView.endMessage(racingGame.getWinner(racingcars));
+        ResultView.endMessage(racingGame.getWinners(cars));
 
     }
 }
