@@ -1,5 +1,7 @@
 package racingcar.domain;
 
+import racingcar.util.RandomNumber;
+
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -44,5 +46,25 @@ public class Cars {
         }
 
         return "";
+    }
+
+    public void move() {
+        for(Car car : cars){
+            car.move(RandomNumber.create());
+        }
+    }
+
+    public void nowScore() {
+        for(Car car : cars){
+            nowScorePrint(car);
+        }
+    }
+
+    private void nowScorePrint(Car car) {
+        System.out.print(car.getName() + ": ");
+        for (int i = 0; i < car.getScore(); i++) {
+            System.out.print("-");
+        }
+        System.out.print("\n");
     }
 }
