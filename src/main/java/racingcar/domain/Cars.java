@@ -1,8 +1,6 @@
 package racingcar.domain;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Cars {
@@ -26,5 +24,19 @@ public class Cars {
         }
 
         return carList;
+    }
+
+    public String findWinners() {
+
+        StringBuilder winners = new StringBuilder();
+        int maxScore = Score.getMaxScore();
+
+        for(Car car : cars){
+            if(maxScore == car.getScore()){
+                winners.append(car.getName()).append(", ");
+            }
+        }
+
+        return winners.substring(0, winners.length() - 2);
     }
 }

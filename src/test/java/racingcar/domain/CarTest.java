@@ -13,6 +13,7 @@ public class CarTest {
         car.move(3);
 
         assertThat(car.getScore()).isEqualTo(0);
+        assertThat(Score.getMaxScore()).isEqualTo(0);
     }
 
     @Test
@@ -22,6 +23,7 @@ public class CarTest {
         car.move(4);
 
         assertThat(car.getScore()).isEqualTo(1);
+        assertThat(Score.getMaxScore()).isEqualTo(1);
     }
 
 }

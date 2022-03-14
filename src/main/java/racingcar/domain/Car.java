@@ -15,10 +15,15 @@ public class Car {
     public void move(int randomNumber) {
         if(randomNumber >= STANDARD_NUMBER){
             score.addScore();
+            score.maxScoreCompare();
         }
     }
 
     public int getScore() {
         return score.getScore();
+    }
+
+    public String getName() {
+        return name.getName();
     }
 }
