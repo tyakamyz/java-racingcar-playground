@@ -42,5 +42,4 @@ class CarsTest {
 
         Assertions.assertThat(cars.findWinners()).isEqualTo("crong, honux");
     }
-
 }
