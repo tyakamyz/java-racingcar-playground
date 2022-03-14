@@ -9,4 +9,9 @@ public class Car {
         this.name = new Name(name);
         this.score = new Score();
     }
+
+    public void move(int randomNumber) {
+
+
+    }
 }
