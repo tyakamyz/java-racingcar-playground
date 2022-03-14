@@ -2,6 +2,8 @@ package racingcar.domain;
 
 public class Car {
 
+    private final int STANDARD_NUMBER = 4;
+
     private final Name name;
     private final Score score;
 
@@ -11,7 +13,17 @@ public class Car {
     }
 
     public void move(int randomNumber) {
+        if(randomNumber >= STANDARD_NUMBER){
+            score.addScore();
+            score.maxScoreCompare();
+        }
+    }
 
+    public int getScore() {
+        return score.getScore();
+    }
 
+    public String getName() {
+        return name.getName();
     }
 }

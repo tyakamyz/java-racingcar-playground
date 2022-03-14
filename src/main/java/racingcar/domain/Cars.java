@@ -1,8 +1,8 @@
 package racingcar.domain;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import racingcar.util.RandomNumber;
+
+import java.util.*;
 import java.util.stream.Collectors;
 
 public class Cars {
@@ -26,5 +26,45 @@ public class Cars {
         }
 
         return carList;
+    }
+
+    public String findWinners() {
+
+        StringBuilder winners = new StringBuilder();
+
+        for(Car car : cars){
+            winners.append(compareMaxScoreToReturnName(car));
+        }
+
+        return winners.substring(0, winners.length() - 2);
+    }
+
+    private String compareMaxScoreToReturnName(Car car) {
+
+        if(Score.getMaxScore() == car.getScore()){
+            return car.getName() + ", ";
+        }
+
+        return "";
+    }
+
+    public void move() {
+        for(Car car : cars){
+            car.move(RandomNumber.create());
+        }
+    }
+
+    public void nowScore() {
+        for(Car car : cars){
+            nowScorePrint(car);
+        }
+    }
+
+    private void nowScorePrint(Car car) {
+        System.out.print(car.getName() + ": ");
+        for (int i = 0; i < car.getScore(); i++) {
+            System.out.print("-");
+        }
+        System.out.print("\n");
     }
 }

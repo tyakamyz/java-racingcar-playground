@@ -7,11 +7,23 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class CarTest {
 
     @Test
-    public void move(){
+    public void move_fail(){
 
         Car car = new Car("pobi");
+        car.move(3);
 
-       // assertThat(car.move(3)).isE
+        assertThat(car.getScore()).isEqualTo(0);
+        assertThat(Score.getMaxScore()).isEqualTo(0);
+    }
+
+    @Test
+    public void move_success(){
+
+        Car car = new Car("pobi");
+        car.move(4);
+
+        assertThat(car.getScore()).isEqualTo(1);
+        assertThat(Score.getMaxScore()).isEqualTo(1);
     }
 
 }
