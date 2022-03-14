@@ -29,14 +29,20 @@ public class Cars {
     public String findWinners() {
 
         StringBuilder winners = new StringBuilder();
-        int maxScore = Score.getMaxScore();
 
         for(Car car : cars){
-            if(maxScore == car.getScore()){
-                winners.append(car.getName()).append(", ");
-            }
+            winners.append(compareMaxScoreToReturnName(car));
         }
 
         return winners.substring(0, winners.length() - 2);
+    }
+
+    private String compareMaxScoreToReturnName(Car car) {
+
+        if(Score.getMaxScore() == car.getScore()){
+            return car.getName() + ", ";
+        }
+
+        return "";
     }
 }
